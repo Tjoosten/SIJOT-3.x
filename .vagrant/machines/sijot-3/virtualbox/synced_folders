@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/sijot-3":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/sijot-3","hostpath":"R:/Clients/SIJOT/sijot-3","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"R:/Clients/SIJOT/sijot-3","disabled":false,"__vagrantfile":true}}}
