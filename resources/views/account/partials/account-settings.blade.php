@@ -1,5 +1,5 @@
 <div class="tab-pane fade in" id="settings">
-    <form method="POST" class="form-horizontal" action="" enctype="multipart/form-data">
+    <form method="POST" class="form-horizontal" action="{{ route('account.settings') }}" enctype="multipart/form-data">
         {{-- CSRF Field --}}
         {{ csrf_field() }}
 
@@ -13,7 +13,7 @@
                     <option value="">-- Selecteer een weergave --</option>
 
                     @foreach ($themes as $theme)
-                        <option value="{{ $theme->class }}" @if($user->theme === $theme->class) selected="selected" @endif>
+                        <option value="{{ $theme->id }}" @if($user->theme === $theme->class) selected="selected" @endif>
                             {{ $theme->name }}
                         </option>
                     @endforeach
@@ -21,23 +21,35 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
             <label for="name" class="control-label col-sm-2">
                 Naam: <span class="text-danger">*</span>
             </label>
 
             <div class="col-sm-4">
                 <input type="text" id="name" class="form-control" placeholder="Gebruikersnaam" value="{{ $user->name }}" name="name">
+
+                @if ($errors->has('name'))
+                    <span class="help-block">
+                        <small>{{ $errors->first('name') }}</small>
+                    </span>
+                @endif
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
             <label for="Email" class="control-label col-sm-2">
                 Email: <span class="text-danger">*</span>
             </label>
 
             <div class="col-sm-4">
-                <input type="email" id="email" class="form-control" placeholder="Email adres." value="{{ $user->email }}">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email adres." value="{{ $user->email }}">
+
+                @if ($errors->has('email'))
+                    <span class="help-block">
+                        <small>{{ $errors->first('email') }}</small>
+                    </span>
+                @endif
             </div>
         </div>
 

@@ -26,9 +26,7 @@ class AuthencationTest extends DuskTestCase
 
     public function testLoginMethod()
     {
-        $user = factory(User::class)->create([
-            'email' => 'taylor@laravel.com',
-        ]);
+        $user = factory(User::class)->create(['email' => 'taylor@laravel.com',]);
 
         $this->browse(function ($browser) use ($user) {
             $browser->visit('/')

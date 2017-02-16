@@ -17,6 +17,7 @@ $factory->define(Sijot\User::class, function (Faker\Generator $faker) {
 
     return [
         'name'           => $faker->name,
+        'theme'          => $faker->numberBetween(0, 1),
         'avatar'         => $faker->imageUrl(),
         'email'          => $faker->unique()->safeEmail,
         'password'       => $password ?: $password = bcrypt('secret'),

@@ -13,7 +13,7 @@ class AccountSettingsValidator extends FormRequest
      */
     public function authorize()
     {
-        return 'true';
+        return true;
     }
 
     /**
@@ -26,7 +26,6 @@ class AccountSettingsValidator extends FormRequest
         return [
             'email' => 'required',
             'name'  => 'required',
-            'theme' => 'required',
         ];
     }
 }
