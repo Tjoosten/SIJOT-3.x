@@ -23,3 +23,11 @@ $factory->define(Sijot\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Sijot\Theme::class, function (Faker\Generator $faker) {
+    return [
+        'name'  => $faker->name,
+        'class' => $faker->name
+    ];
+});

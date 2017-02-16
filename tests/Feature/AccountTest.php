@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use Sijot\Theme;
 use Sijot\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -45,27 +46,58 @@ class AccountTest extends TestCase
      */
     public function testUpdatePasswordNoValidationErr()
     {
+        $user = factory(User::class)->create();
 
+        $input['password']              = '123456!';
+        $input['password_confirmation'] = '123456!';
+
+        $this->actingas($user)
+            ->seeIsAuthenticatedAs($user)
+            ->post(route('account.security'), $input)
+            ->assertSessionHas('class', 'alert alert-success')
+            ->assertSessionHas('message', 'Account wachtwoord is aangepast.')
+            ->assertStatus(302);
     }
 
     public function testUpdatePasswordValidationErr()
     {
         $user = factory(User::class)->create();
 
-        $this->actingas($user);
-        $this->seeIsAuthenticatedAs($user);
-
-        $test = $this->post(route('account.security'), []);
-        $test->assertStatus(302);
+        $this->actingas($user)
+            ->seeIsAuthenticatedAs($user)
+            ->post(route('account.security'), [])
+            ->assertSessionHasErrors('password')
+            ->assertStatus(302)
+            ->assertRedirect(route('home'));
     }
 
     public function testUpdateSettingsValidationErr()
     {
-        //
+        $user = factory(User::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->post(route('account.settings'), [])
+            // ->assertSessionHasErrors('name')
+            // ->assertSessionHasErrors('email')
+            // ->assertSessionHasErrors('theme')
+            ->assertStatus(302);
     }
 
     public function testUpdateSettingsNoValidationErr()
     {
-        //
+        $user  = factory(User::class)->create();
+        $theme = factory(Theme::class)->create();
+
+        $input['email'] = 'janmetdepet@domain.tld';
+        $input['name']  = 'Jan met de pet';
+        $input['theme'] = $theme->id;
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->post(route('account.settings'), $input)
+            ->assertSessionHas('class', 'alert alert-success')
+            ->assertSessionHas('message', 'De account informatie is aangepast.')
+            ->assertStatus(302);
     }
 }

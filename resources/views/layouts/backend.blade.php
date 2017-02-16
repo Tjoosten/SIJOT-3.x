@@ -121,7 +121,7 @@
                         <!-- Control Sidebar Toggle Button -->
                         <li>
                             <a href="{{ route('auth.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <span class="fa fa-sign-out" aria-hidden="true"></span>
+                                <span class="fa fa-sign-out" aria-hidden="true"></span> Uitloggen
                             </a>
 
                             <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
