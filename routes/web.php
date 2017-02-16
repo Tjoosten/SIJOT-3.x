@@ -36,3 +36,4 @@ Route::get('/verhuur/optie/{id}', 'LeaseController@setOption')->name('lease.opti
 Route::get('/verhuur/kalender', 'LeaseController@leaseCalendar')->name('lease.calendar');
 
 Route::get('/profiel', 'AccountController@index')->name('account.index');
+Route::post('/profiel/security', 'AccountController@updatePassword')->name('account.security');
