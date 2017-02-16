@@ -7,6 +7,11 @@ use Sijot\Http\Requests\LeaseValidator;
 use Sijot\Lease;
 use Sijot\RentalStatus;
 
+/**
+ * Class LeaseController
+ *
+ * @package Sijot\Http\Controllers
+ */
 class LeaseController extends Controller
 {
     /**
