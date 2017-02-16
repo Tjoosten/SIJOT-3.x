@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <img class="img-rounded img-front" src="http://www.wansmaak.activisme.be/assets/img/front.jpg" alt="BK postjes pakken">
+            <img class="img-rounded img-front" src="{{ asset('img/front.jpg') }}" alt="BK postjes pakken">
         </div>
     </div>
 

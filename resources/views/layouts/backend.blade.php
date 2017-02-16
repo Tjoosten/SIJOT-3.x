@@ -113,7 +113,7 @@
 
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
-                            <a href="#">
+                            <a href="{{ route('account.index') }}">
                                 <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                                 <span class="hidden-xs">{{ auth()->user()->name }}</span>
                             </a>

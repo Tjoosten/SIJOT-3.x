@@ -3,6 +3,7 @@
 namespace Sijot;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Sijot\RentalStatus
@@ -18,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class RentalStatus extends Model
 {
+    use SoftDeletes;
+
     /**
      * Mass-assign fields.
      *

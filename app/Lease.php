@@ -68,6 +68,8 @@ class Lease extends Model
     }
 
     /**
+     * Status relationship. Used to indicate the lease status.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function status()
