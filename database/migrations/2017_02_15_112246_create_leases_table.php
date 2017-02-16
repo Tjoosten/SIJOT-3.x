@@ -18,7 +18,7 @@ class CreateLeasesTable extends Migration
             $table->string('rental_status_id')->default(0);
             $table->string('group_name');
             $table->string('email_address');
-            $table->string('phone_number');
+            $table->string('phone_number')->nullable();
             $table->string('end_date');
             $table->string('start_date');
             $table->softDeletes();

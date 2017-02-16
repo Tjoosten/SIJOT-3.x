@@ -12,6 +12,8 @@ class LeaseController extends Controller
     /**
      * Front-end index for the domain lease.
      *
+     * @see:unit-test   \Tests\Feature\LeaseTest::testFrontEndIndex
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
@@ -22,6 +24,8 @@ class LeaseController extends Controller
 
     /**
      * Front-end description domain access.
+     *
+     * @see:unit-test   \Tests\Feature\LeaseTest::testDomainAccess
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -34,6 +38,8 @@ class LeaseController extends Controller
     /**
      * Backend lease index.
      *
+     * @see:unit-test   \Tests\Feature\LeaseTest::testBackendIndex
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function leaseBackend()
@@ -45,6 +51,8 @@ class LeaseController extends Controller
 
     /**
      * Lease calendar.
+     *
+     * @see:unit-test   \Tests\Feature\LeaseTest::testLeaseCalendar
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -60,12 +68,14 @@ class LeaseController extends Controller
     /**
      * Insert a new domain lease.
      *
+     * @see:unit-test   \Tests\Feature\LeaseTest::testInsertLeaseErr
+     * @see:unit-test   \Tests\Feature\LeaseTest::testInsertLeaseNoErr
+     *
      * @param  LeaseValidator  $input  The lease request data validator.
      * @return \Illuminate\Http\RedirectResponse
      */
     public function insertLease(LeaseValidator $input)
     {
-        dd($input->all());
         $MySQL['insert'] = Lease::create($input->except('_token'));
         $MySQL['update'] = Lease::find($MySQL['insert']->id)->update([
             'rental_status_id' => RentalStatus::where('name', 'Nieuwe aanvraag')->first()->id
@@ -82,6 +92,8 @@ class LeaseController extends Controller
     /**
      * Request a new domain lease.
      *
+     * @see:unit-test   \Tests\Feature\LeaseTest::testRequestLease
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function requestLease()
@@ -92,7 +104,11 @@ class LeaseController extends Controller
 
 
     /**
-     * @param  int $id
+     * Set a lease to confirmed status.
+     *
+     * @see:unit-test   \Tests\Feature\LeaseTest::testSetConfirmed
+     *
+     * @param  int $id The lease id in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
     public function setConfirmed($id)
@@ -103,14 +119,18 @@ class LeaseController extends Controller
 
         if ($MySQL['update']) {
             session()->flash('class', 'alert alert-success');
-            session()->flash('message', 'De verhuring is besvestigd.');
+            session()->flash('message', 'De verhuring is bevestigd.');
         }
 
         return back();
     }
 
     /**
-     * @param  int $id
+     * Set a lease to option status.
+     *
+     * @see:unit-test  \Tests\Feature\LeaseTest::testSetOption
+     *
+     * @param  int $id The lease id in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
     public function setOption($id)
@@ -129,6 +149,8 @@ class LeaseController extends Controller
 
     /**
      * Soft delete a rental in the database.
+     *
+     * @see:unit-test \Tests\Feature\LeaseTest::testLeaseDelete
      *
      * @param  int $id The rentalid in the database
      * @return \Illuminate\Http\RedirectResponse

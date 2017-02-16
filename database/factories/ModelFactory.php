@@ -32,3 +32,25 @@ $factory->define(Sijot\Theme::class, function (Faker\Generator $faker) {
         'class' => $faker->name
     ];
 });
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Sijot\Lease::class, function (Faker\Generator $faker){
+    return [
+        'rental_status_id'  => $faker->numberBetween(0, 2),
+        'end_date'          => $faker->date(),
+        'start_date'        => $faker->date(),
+        'email_address'     => $faker->email,
+        'group_name'        => $faker->name,
+        'phone_number'      => $faker->phoneNumber,
+    ];
+});
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Sijot\RentalStatus::class, function (Faker\Generator $faker) {
+    return [
+        'name'          => $faker->name,
+        'label_class'   => $faker->rgbCssColor,
+        'table_class'   => $faker->rgbCssColor,
+        'description'   => $faker->text(200)
+    ];
+});
