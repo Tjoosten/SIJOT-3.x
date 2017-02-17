@@ -56,7 +56,7 @@ class LeaseTest extends TestCase
      */
     public function testLeaseCalendar()
     {
-        factory(RentalStatus::class)->create(['name' => 'bevestigd']);
+        factory(RentalStatus::class)->create(['name' => 'Bevestigd']);
         $this->get(route('lease.calendar'))->assertStatus(200);
     }
 

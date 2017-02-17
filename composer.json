@@ -9,7 +9,6 @@
         "barryvdh/laravel-debugbar": "^2.3",
         "filp/whoops": "^2.1",
         "garygreen/pretty-routes": "^0.0.6",
-        "laravel/dusk": "^1.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "spatie/laravel-permission": "^1.8"

@@ -1,3 +1,0 @@
-[0216/212929.085:ERROR:process_reader_win.cc(114)] NtOpenThread: {Toegang geweigerd} Een proces heeft toegang tot een object aangevraagd, maar heeft deze toegangsrechten niet gekregen.  (0xc0000022)
-[0216/212929.086:ERROR:exception_snapshot_win.cc(87)] thread ID 17208 not found in process
-[0216/212929.086:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
