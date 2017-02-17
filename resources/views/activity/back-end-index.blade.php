@@ -18,7 +18,7 @@
             <h3 class="box-title">Activiteit</h3>
 
             <div class="box-tools pull-right">
-                <a href="" class="label label-success">Activiteit toevoegen</a>
+                <a href="#" data-toggle="modal" data-target="#newActivity" class="label label-success">Activiteit toevoegen</a>
             </div>
         </div>
         <div class="box-body">
@@ -49,7 +49,7 @@
                                     <th>{{ $activity->created_at }}</th>
 
                                     <th> {{-- Functions --}}
-
+                                        <a href="" class="label label-danger">Verwijder</a>
                                     </th> {{-- /Functions --}}
                                 </tr>
                             @endforeach
@@ -58,5 +58,9 @@
                 </div>
             @endif
         </div>
+
+        {{-- Modal includes --}}
+            @include('activity.partials.create')
+        {{-- Modal includes --}}
     </div>
 @endsection

@@ -4,6 +4,7 @@ namespace Sijot\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Sijot\Activity;
+use Sijot\Branch;
 use Sijot\Http\Requests\ActivityValidator;
 
 /**
@@ -31,19 +32,10 @@ class ActivityController extends Controller
     public function backend()
     {
         $data['title']      = 'Activiteiten';
+        $data['groups']     = Branch::all();
         $data['activities'] = Activity::paginate(15);
 
         return view('activity.back-end-index', $data);
-    }
-
-    /**
-     * Create view for the flashly activity creation.
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function create()
-    {
-        return view();
     }
 
     /**
