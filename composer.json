@@ -11,6 +11,7 @@
         "garygreen/pretty-routes": "^0.0.6",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+        "sijot/api-guard": "3.1.3",
         "spatie/laravel-permission": "^1.8"
     },
     "require-dev": {
