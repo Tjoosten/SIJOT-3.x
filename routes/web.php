@@ -35,6 +35,9 @@ Route::get('/verhuur/bevestigd/{id}', 'LeaseController@setConfirmed')->name('lea
 Route::get('/verhuur/optie/{id}', 'LeaseController@setOption')->name('lease.option');
 Route::get('/verhuur/kalender', 'LeaseController@leaseCalendar')->name('lease.calendar');
 
+// Activity routes.
+Route::get('activiteiten', 'ActivityController@backend')->name('activity.backend');
+
 Route::get('/profiel', 'AccountController@index')->name('account.index');
 Route::post('/profiel/informatie', 'AccountController@updateSettings')->name('account.settings');
 Route::post('/profiel/security', 'AccountController@updatePassword')->name('account.security');

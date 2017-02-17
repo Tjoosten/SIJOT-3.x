@@ -22,6 +22,13 @@ class CreateBranchesTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
+
+        Schema::create('activity_branch', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('branch_id');
+            $table->integer('activity_id');
+            $table->timestamps();
+        });
     }
 
     /**

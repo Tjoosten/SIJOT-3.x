@@ -179,6 +179,11 @@
                             <i class="fa fa-file-text-o" aria-hidden="true"></i> <span>Nieuws</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('activity.backend') }}">
+                            <i class="fa fa-asterisk" aria-hidden="true"></i> <span>Activiteiten</span>
+                        </a>
+                    </li>
                 </ul>
             </section>
             <!-- /.sidebar -->

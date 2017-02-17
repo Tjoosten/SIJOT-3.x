@@ -20,7 +20,7 @@ class GroupController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('show');
+        $this->middleware('auth')->except(['show']);
     }
 
     /**
@@ -31,6 +31,12 @@ class GroupController extends Controller
         return view();
     }
 
+    /**
+     * Edit view for a group.
+     *
+     * @param  int $id The group data id in the database.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function editGroup($id)
     {
         return view();
@@ -66,8 +72,13 @@ class GroupController extends Controller
         };
 
         $data['group'] = Branch::with(['activities' => $queryRel])->where('selector', $selector)->first();
-        $data['title'] = $data['group']->title;
 
-        return view('groups.front-end-show', $data);
+        if ((int) count($data['group']) > 0) {
+            $data['title'] = $data['group']->title;
+
+            return view('groups.front-end-show', $data);
+        } else {
+            return app()->abort(404);
+        }
     }
 }
