@@ -37,6 +37,24 @@ class UsersController extends Controller
         return view('users.login-index', $data);
     }
 
+    public function userBlock($id)
+    {
+        if () {
+
+        }
+
+        return back();
+    }
+
+    public function userUnblock($id)
+    {
+        if () {
+
+        }
+
+        return back();
+    }
+
     public function destroy($id)
     {
         if (User::destroy($id)) {
