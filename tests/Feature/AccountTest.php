@@ -59,6 +59,10 @@ class AccountTest extends TestCase
             ->assertStatus(302);
     }
 
+    /**
+     * @group all
+     * @group backend
+     */
     public function testUpdatePasswordValidationErr()
     {
         $user = factory(User::class)->create();
@@ -71,6 +75,10 @@ class AccountTest extends TestCase
             ->assertRedirect(route('home'));
     }
 
+    /**
+     * @group all
+     * @group backend
+     */
     public function testUpdateSettingsValidationErr()
     {
         $user = factory(User::class)->create();
@@ -84,6 +92,10 @@ class AccountTest extends TestCase
             ->assertStatus(302);
     }
 
+    /**
+     * @group all
+     * @group backend
+     */
     public function testUpdateSettingsNoValidationErr()
     {
         $user  = factory(User::class)->create();

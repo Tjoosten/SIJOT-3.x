@@ -8,8 +8,17 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
+/**
+ * Class AuthencationTest
+ *
+ * @package Tests\Feature
+ */
 class AuthencationTest extends TestCase
 {
+    /**
+     * @group backend
+     * @group authencation
+     */
     public function testLoginBackendIndex()
     {
         $user = factory(User::class)->create();
@@ -22,6 +31,10 @@ class AuthencationTest extends TestCase
             ->assertSee($user->name);
     }
 
+    /**
+     * @group backend
+     * @group authencation
+     */
     public function testLoginDelete()
     {
         $user = factory(User::class)->create();
