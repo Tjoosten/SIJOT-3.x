@@ -41,3 +41,6 @@ Route::get('activiteiten', 'ActivityController@backend')->name('activity.backend
 Route::get('/profiel', 'AccountController@index')->name('account.index');
 Route::post('/profiel/informatie', 'AccountController@updateSettings')->name('account.settings');
 Route::post('/profiel/security', 'AccountController@updatePassword')->name('account.security');
+
+// Login authorization routes.
+Route::get('users/index', 'UsersController@index')->name('users.index');
