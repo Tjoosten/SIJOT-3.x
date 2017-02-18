@@ -37,24 +37,38 @@ class UsersController extends Controller
         return view('users.login-index', $data);
     }
 
+    /**
+     *
+     * @param  int $id the userid in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function userBlock($id)
     {
         if () {
-
+            session()->flash();
+            session()->flash();
         }
 
         return back();
     }
 
+    /**
+     * @param  int $id the userid in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function userUnblock($id)
     {
         if () {
-
+            session()->flash();
+            session()->flash();
         }
 
         return back();
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id)
     {
         if (User::destroy($id)) {
