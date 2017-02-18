@@ -43,4 +43,5 @@ Route::post('/profiel/informatie', 'AccountController@updateSettings')->name('ac
 Route::post('/profiel/security', 'AccountController@updatePassword')->name('account.security');
 
 // Login authorization routes.
-Route::get('users/index', 'UsersController@index')->name('users.index');
+Route::get('/users/index', 'UsersController@index')->name('users.index');
+Route::get('/users/delete/{id}', 'UsersController@destroy')->name('account.delete');

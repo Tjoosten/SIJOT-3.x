@@ -54,9 +54,9 @@
                                     <td>{{ $user->created_at }}</td>
 
                                     <td> {{-- Functions --}}
-                                        <span class="label label-danger">
+                                        <a href="{{ route('account.delete', ['id' => $user->account]) }}" class="label label-danger">
                                             <span class="fa fa-close" aria-hidden="true"></span> Verwijder
-                                        </span>
+                                        </a>
 
                                         @if ($user->hasRole('active'))
                                             <span class="label label-danger">

@@ -25,6 +25,8 @@ class UsersController extends Controller
     /**
      * Get the backend user control panel.
      *
+     * @see:unit-test \Tests\Feature\AuthencationTest::testLoginBackendIndex
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
@@ -33,5 +35,15 @@ class UsersController extends Controller
         $data['users'] = User::paginate(15);
 
         return view('users.login-index', $data);
+    }
+
+    public function destroy($id)
+    {
+        if (User::destroy($id)) {
+            session()->flash('class', 'alert alert-success');
+            session()->flash('message', 'De login is verwijderd.');
+        }
+
+        return back();
     }
 }
