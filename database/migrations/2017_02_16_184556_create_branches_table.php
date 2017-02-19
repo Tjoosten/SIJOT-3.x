@@ -19,6 +19,7 @@ class CreateBranchesTable extends Migration
             $table->string('sub_heading')->nullable();
             $table->string('heading')->nullable();
             $table->string('description')->nullable();
+            $table->string('image_path')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

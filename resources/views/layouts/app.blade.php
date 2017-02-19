@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }} | {{ $title }}</title>
 
     <!-- Styles -->
+    <link rel="shortcut icon" type="image/svg" href="{{ asset('img/favicon.svg') }}">
     <link rel="stylesheet" href="{{ asset('css/Scouts-en-Gidsen-Vlaanderen.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">

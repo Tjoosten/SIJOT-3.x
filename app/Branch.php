@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property      string           $sub_heading     The sub heading for the group information.
  * @property      string           $heading         The description title.
  * @property      string           $description     The group description
+ * @propertt      string           $image_path      The group icon.
  * @property      \Carbon\Carbon   $deleted_at      Timestamp for the data row deletion.
  * @property      \Carbon\Carbon   $created_at      Timestamp for the data row creation.
  * @property      \Carbon\Carbon   $updated_at      Timestamp for the last modify on the data row.

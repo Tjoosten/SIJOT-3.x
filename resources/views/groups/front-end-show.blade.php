@@ -9,20 +9,29 @@
 
     <div class="row row-padding">
         {{-- Content --}}
-           <div class="col-md-9">
-               <div class="panel panel-default border">
-                   <div class="panel-body">
-                       <div style="margin-top: -20px;" class="page-header">
-                           <h2 style="margin-bottom: -5px;">{{ $group->heading }}
-                               <small>{{ $group->sub_heading }}</small>
-                           </h2>
+            <div class="col-md-9">
+                <div class="panel panel-default border">
+                    <div class="panel-body">
+                        <div style="margin-top: -20px;" class="page-header">
+                            <h2 style="margin-bottom: -5px;">{{ $group->heading }}
+                                <small>{{ $group->sub_heading }}</small>
+                            </h2>
+                        </div>
 
-                           {{-- Text --}}
-                           {{-- /Text --}}
-                       </div>
-                   </div>
-               </div>
-           </div>
+                        {{-- Text --}}
+                            <div class="row">
+                                <div class="col-sm-9">
+                                    ygusdhksj
+                                </div>
+
+                                <div class="col-md-3">
+                                    <img class="img-rounded img-thumbnail" src="" alt="">
+                                </div>
+                            </div>
+                        {{-- /Text --}}
+                    </div>
+                </div>
+            </div>
         {{-- /Content --}}
 
         {{-- Sidebar --}}
