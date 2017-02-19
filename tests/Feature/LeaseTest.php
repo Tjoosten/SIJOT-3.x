@@ -151,6 +151,21 @@ class LeaseTest extends TestCase
      * @group all
      * @group backend
      */
+    public function testSearchDataFound()
+    {
+        $user  = factory(User::class)->create();
+        $lease = factory(Lease::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->get(route('lease.search'), ['term' => $lease->group_name])
+            ->assertStatus(302);
+    }
+
+    /**
+     * @group all
+     * @group backend
+     */
     public function testLeaseDelete()
     {
         $user  = factory(User::class)->create();

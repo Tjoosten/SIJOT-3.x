@@ -136,7 +136,7 @@ class LeaseController extends Controller
     /**
      * Search for a specific lease.
      *
-     * @see:unit-test   TODO: Build up the test case
+     * @see:unit-test   \Tests\Feature\LeaseTest::testSearchDataFound
      *
      * @param   LeaseSearchValidator $input
      * @return  \Illuminate\Contracts\View\Factory|\Illuminate\View\View
