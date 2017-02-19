@@ -155,6 +155,13 @@ class LeaseController extends Controller
             ->orWhere('phone_number', 'LIKE', "%$term%")
             ->paginate(15);
 
+        if ((int) count($data['lease']) === 0) {
+            session()->flash('class', 'alert alert-success');
+            session()->flash('message', 'Er zijn geen verhuring gevonden onder de term: ' . $term);
+
+            $data['lease']  = Lease::with(['status'])->paginate(15);
+        }
+
         return view('lease.back-end-index', $data);
     }
 
