@@ -106,7 +106,17 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Nieuws:</div>
 
-
+                @if((int) count($news) > 0)
+                    {{ dd($news) }}
+                @else
+                    <div class="panel-body">
+                        <span class="text-muted">
+                            <i>
+                                (Geen nieuws gevonden)
+                            </i>
+                        </span>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
