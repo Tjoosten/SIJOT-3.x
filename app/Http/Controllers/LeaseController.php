@@ -70,6 +70,7 @@ class LeaseController extends Controller
 
         $data['title']  = 'Verhuur kalender.';
         $data['leases'] = Lease::where('rental_status_id', $statusId)->paginate(15);
+
         return view('lease.front-end-calendar', $data);
     }
 
@@ -84,10 +85,14 @@ class LeaseController extends Controller
      */
     public function insertLease(LeaseValidator $input)
     {
+        if (! auth()->check()) { // No user is logged in
+            $updateFields = ['rental_status_id' => RentalStatus::where('name', 'Nieuwe aanvraag')->first()->id];
+        } else { // User is logged in
+            $updateFields = ['rental_status_id' => $input->status_id];
+        }
+
         $MySQL['insert'] = Lease::create($input->except('_token'));
-        $MySQL['update'] = Lease::find($MySQL['insert']->id)->update([
-            'rental_status_id' => RentalStatus::where('name', 'Nieuwe aanvraag')->first()->id
-        ]);
+        $MySQL['update'] = Lease::find($MySQL['insert']->id)->update($updateFields);
 
         if ($MySQL['insert'] && $MySQL['update']) {
             session()->flash('class', 'alert alert-success');

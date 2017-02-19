@@ -11,7 +11,7 @@
                 <h4 class="modal-title" id="myModalLabel">Verhuring aanmaken</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" method="POST" action="" id="create">
+                <form class="form-horizontal" method="POST" action="{{ route('lease.insert') }}" id="create">
                     {{-- CSRF field --}}
                     {{ csrf_field() }}
 
@@ -31,7 +31,7 @@
                         </label>
 
                         <div class="col-sm-9">
-                            <input type="text" name="end_data" placeholder="Eind datum" class="form-control">
+                            <input type="text" name="end_date" placeholder="Eind datum" class="form-control">
                         </div>
                     </div>
 
