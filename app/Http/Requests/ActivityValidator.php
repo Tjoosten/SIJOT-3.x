@@ -4,10 +4,7 @@ namespace Sijot\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-/**
- * @property mixed status_id
- */
-class LeaseValidator extends FormRequest
+class ActivityValidator extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,7 +13,7 @@ class LeaseValidator extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -27,10 +24,7 @@ class LeaseValidator extends FormRequest
     public function rules()
     {
         return [
-            'start_date'    => 'required',
-            'end_date'      => 'required',
-            'email_address' => 'required',
-            'group_name'    => 'required',
+            //
         ];
     }
 }

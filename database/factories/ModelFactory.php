@@ -54,3 +54,13 @@ $factory->define(Sijot\RentalStatus::class, function (Faker\Generator $faker) {
         'description'   => $faker->text(200)
     ];
 });
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Spatie\Permission\Models\Permission::class, function (Faker\Generator $faker) {
+    return ['name' => 'active'];
+});
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Spatie\Permission\Models\Role::class, function (Faker\Generator $faker) {
+    return ['name' => $faker->word];
+});

@@ -168,15 +168,27 @@
                             <i class="fa fa-home" aria-hidden="true"></i> <span>Verhuringen</span>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="">
-                            <i class="fa fa-users" aria-hidden="true"></i> <span>Loginbeheer</span>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-users"></i> <span>Login beheer</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                             </span>
                         </a>
+                        <ul class="treeview-menu" style="display: none;">
+                            <li><a href="{{ route('users.index') }}"><i class="fa fa-circle-o"></i> Logins</a></li>
+                            <li><a href=""><i class="fa fa-circle-o"></i> Rechten & permissies</a></li>
+                            <li><a href=""><i class="fa fa-circle-o"></i> API sleutels</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i> <span>Nieuws</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('activity.backend') }}">
+                            <i class="fa fa-asterisk" aria-hidden="true"></i> <span>Activiteiten</span>
                         </a>
                     </li>
                 </ul>

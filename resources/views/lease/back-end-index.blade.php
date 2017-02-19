@@ -18,7 +18,9 @@
             <h3 class="box-title">Verhuringen</h3>
 
             <div class="box-tools pull-right">
-                <a href="" class="label label-success">Verhuring toevoegen</a>
+                <a href="#" class="label label-info">Exporteer</a>
+                <a href="#" data-toggle="modal" data-target="#searchLease" class="label label-info">Verhuring zoeken</a>
+                <a href="#" data-toggle="modal" data-target="#newLease" class="label label-success">Verhuring toevoegen</a>
             </div>
         </div>
         <div class="box-body">
@@ -50,9 +52,12 @@
 
                                 {{-- Options --}}
                                     <td>
-                                        <a class="label label-warning" href="{{ route('lease.option', ['id' => $data->id ]) }}"><span class="fa fa-check"></span> Optie</a>
-                                        <a class="label label-success" href="{{ route('lease.confirm', ['id' => $data->id]) }}"><span class="fa fa-check"></span> Bevestig</a>
-                                        <a class="label label-danger" href="{{ route('lease.delete', ['id' => $data->id]) }}"><span class="fa fa-trash"></span> Verwijder</a>
+                                        <span class="pull-right">
+                                            <a class="label label-warning" href="{{ route('lease.option', ['id' => $data->id ]) }}"><span class="fa fa-check"></span> Optie</a>
+                                            <a class="label label-success" href="{{ route('lease.confirm', ['id' => $data->id]) }}"><span class="fa fa-check"></span> Bevestig</a>
+                                            <a class="label label-info" href="#"><span class="fa fa-file-text-o"></span> Info</a>
+                                            <a class="label label-danger" href="{{ route('lease.delete', ['id' => $data->id]) }}"><span class="fa fa-trash"></span> Verwijder</a>
+                                        </span>
                                     </td>
                                 {{-- /Options --}}
                             </tr>
@@ -74,4 +79,9 @@
         <!-- /.box-footer-->
     </div>
     <!-- /.box -->
+
+    {{--Lease modal includes --}}
+        @include('lease.partials.create-modal')
+        @include('lease.partials.search-modal')
+    {{-- /Lease modal includes --}}
 @endsection
