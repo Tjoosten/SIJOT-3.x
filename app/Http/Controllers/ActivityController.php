@@ -103,7 +103,7 @@ class ActivityController extends Controller
      */
     public function showBackend($id)
     {
-        return view();
+        return view('', $data);
     }
 
     /**
