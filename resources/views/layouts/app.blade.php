@@ -63,7 +63,16 @@
                         <li><a href="{{ route('lease.index') }}"><span class="fa fa-home" aria-hidden="true"></span> Verhuur</a></li>
                         <li><a href=""><span class="fa fa-picture-o" aria-hidden="true"></span> Foto's</a></li>
                         <li><a href=""><span class="fa fa-file-text-o" aria-hidden="true"></span> Planning</a></li>
-                        <li><a href=""><span class="fa fa-info-circle" aria-hidden="true"></span> Info</a></li>
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
+                                <span class="fa fa-info-circle" aria-hidden="true"></span> Info
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('info.subscribe') }}">Inschrijven en lidgeld</a></li>
+                            </ul>
+                        </li>
+
                         <li><a href="mailto:contact@st-joris-turnhout.be"><span class="fa fa-envelope" aria-hidden="true"></span> Contact</a></li>
                     </ul>
 
@@ -184,10 +193,12 @@
                     <p>© {{ date('Y') }} - Scouts en Gidsen Sint-Joris, Turnhout</p>
                 </div>
                 <div class="col-md-6">
+                    {{--
                     <ul class="bottom_ul">
                         <li><a href="#"><span class="fa fa-language"></span> Nederlands</a></li>
                         <li><a href="#"><span class="fa fa-language"></span> Engels</a></li>
                     </ul>
+                    --}}
                 </div>
             </div>
         </div>
