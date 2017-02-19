@@ -49,8 +49,10 @@ class LeaseController extends Controller
      */
     public function leaseBackend()
     {
-        $data['title'] = 'Verhuur overzicht';
-        $data['lease'] = Lease::with(['status'])->paginate(15);
+        $data['title']  = 'Verhuur overzicht';
+        $data['lease']  = Lease::with(['status'])->paginate(15);
+        $data['status'] = RentalStatus::all();
+
         return view('lease.back-end-index', $data);
     }
 
