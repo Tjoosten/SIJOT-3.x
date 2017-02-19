@@ -34,6 +34,7 @@ Route::get('/verhuur/verwijder/{id}', 'LeaseController@deleteLease')->name('leas
 Route::get('/verhuur/bevestigd/{id}', 'LeaseController@setConfirmed')->name('lease.confirm');
 Route::get('/verhuur/optie/{id}', 'LeaseController@setOption')->name('lease.option');
 Route::get('/verhuur/kalender', 'LeaseController@leaseCalendar')->name('lease.calendar');
+Route::get('/verhuur/zoek', 'LeaseController@search')->name('lease.search');
 
 // Activity routes.
 Route::get('activiteiten', 'ActivityController@backend')->name('activity.backend');

@@ -3,6 +3,7 @@
 namespace Sijot\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Sijot\Http\Requests\LeaseSearchValidator;
 use Sijot\Http\Requests\LeaseValidator;
 use Sijot\Lease;
 use Sijot\RentalStatus;
@@ -130,6 +131,31 @@ class LeaseController extends Controller
         }
 
         return back();
+    }
+
+    /**
+     * Search for a specific lease.
+     *
+     * @see:unit-test   TODO: Build up the test case
+     *
+     * @param   LeaseSearchValidator $input
+     * @return  \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function search(LeaseSearchValidator $input)
+    {
+        $term = $input->get('term');
+
+        $data['title']  = 'Verhuur zoeken';
+        $data['status'] = RentalStatus::all();
+        $data['lease']  = Lease::with(['status'])
+            ->where('start_date', 'LIKE', "%$term%")
+            ->orWhere('end_date', 'LIKE', "%$term%")
+            ->orWhere('email_address', 'LIKE', "%$term%")
+            ->orWhere('group_name', 'LIKE', "%$term%")
+            ->orWhere('phone_number', 'LIKE', "%$term%")
+            ->paginate(15);
+
+        return view('lease.back-end-index', $data);
     }
 
     /**

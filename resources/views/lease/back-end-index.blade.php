@@ -52,10 +52,12 @@
 
                                 {{-- Options --}}
                                     <td>
-                                        <a class="label label-warning" href="{{ route('lease.option', ['id' => $data->id ]) }}"><span class="fa fa-check"></span> Optie</a>
-                                        <a class="label label-success" href="{{ route('lease.confirm', ['id' => $data->id]) }}"><span class="fa fa-check"></span> Bevestig</a>
-                                        <a class="label label-info" href="#"><span class="fa fa-file-text-o"></span> Info </a>
-                                        <a class="label label-danger" href="{{ route('lease.delete', ['id' => $data->id]) }}"><span class="fa fa-trash"></span> Verwijder</a>
+                                        <span class="pull-right">
+                                            <a class="label label-warning" href="{{ route('lease.option', ['id' => $data->id ]) }}"><span class="fa fa-check"></span> Optie</a>
+                                            <a class="label label-success" href="{{ route('lease.confirm', ['id' => $data->id]) }}"><span class="fa fa-check"></span> Bevestig</a>
+                                            <a class="label label-info" href="#"><span class="fa fa-file-text-o"></span> Info</a>
+                                            <a class="label label-danger" href="{{ route('lease.delete', ['id' => $data->id]) }}"><span class="fa fa-trash"></span> Verwijder</a>
+                                        </span>
                                     </td>
                                 {{-- /Options --}}
                             </tr>

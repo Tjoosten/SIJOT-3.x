@@ -6,7 +6,7 @@
                 <h4 class="modal-title">Verhuring zoeken</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" method="POST" action="" id="search">
+                <form class="form-horizontal" method="GET" action="{{ route('lease.search') }}" id="search">
                     {{-- CSRF field --}}
                     {{ csrf_field() }}
 
@@ -18,7 +18,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-sm btn-success">
+                <button type="submit" form="search" class="btn btn-sm btn-success">
                     <span class="fa fa-search" aria-hidden="true"></span> Zoeken
                 </button>
 
