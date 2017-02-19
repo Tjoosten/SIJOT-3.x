@@ -19,7 +19,7 @@
 
             <div class="box-tools pull-right">
                 <a href="#" class="label label-info">Exporteer</a>
-                <a href="" class="label label-info">Verhuring zoeken</a>
+                <a href="#" data-toggle="modal" data-target="#searchLease" class="label label-info">Verhuring zoeken</a>
                 <a href="#" data-toggle="modal" data-target="#newLease" class="label label-success">Verhuring toevoegen</a>
             </div>
         </div>
@@ -80,5 +80,6 @@
 
     {{--Lease modal includes --}}
         @include('lease.partials.create-modal')
+        @include('lease.partials.search-modal')
     {{-- /Lease modal includes --}}
 @endsection
