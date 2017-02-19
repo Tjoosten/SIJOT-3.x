@@ -59,13 +59,13 @@
                                         </a>
 
                                         @if ($user->hasRole('active'))
-                                            <span class="label label-danger">
+                                            <a href="{{ route('account.block', ['id' => $user->id]) }}" class="label label-danger">
                                                 <span class="fa fa-check" aria-hidden="true"></span> Blokkeer
-                                            </span>
+                                            </a>
                                         @elseif($user->hasRole('blocked'))
-                                            <span class="label label-success">
+                                            <a href="{{ route('account.unblock', ['id' => $user->id]) }}" class="label label-success">
                                                 <span class="fa fa-check" aria-hidden="true"></span> Activeer
-                                            </span>
+                                            </a>
                                         @endif
                                     </td> {{-- /Functions --}}
                                 </tr>

@@ -8,7 +8,10 @@ use Sijot\User;
 /**
  * Class UsersController
  *
- * @package Sijot\Http\Controllers
+ * @package     Sijot\Http\Controllers
+ * @author      Tim Joosten <Topairy@gmail.com>
+ * @copyright   Tim Joosten 2015-2017
+ * @vesion      3.0.0
  */
 class UsersController extends Controller
 {
@@ -38,36 +41,46 @@ class UsersController extends Controller
     }
 
     /**
+     * Block an user account in the system.
      *
      * @param  int $id the userid in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
     public function userBlock($id)
     {
-        if () {
-            session()->flash();
-            session()->flash();
+        $user = User::findOrFail($id);
+
+        if ($user->removeRole('active') && $user->assignRole('blocked')) {
+            session()->flash('class', 'alert alert-success');
+            session()->flash('message', 'De gebruikers is geblokkeerd');
         }
 
         return back();
     }
 
     /**
+     * Unblock an user into the system.
+     *
      * @param  int $id the userid in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
     public function userUnblock($id)
     {
-        if () {
-            session()->flash();
-            session()->flash();
+        $user = User::findOrFail($id);
+
+        if ($user->removeRole('blocked') && $user->assignRole('active')) {
+            session()->flash('class', 'alert alert-success');
+            session()->flash('message', 'De gebruiker is terug geactiveerd.');
         }
 
         return back();
     }
 
     /**
-     * @return \Illuminate\Http\RedirectResponse
+     * Delete a user in the system.
+     *
+     * @param   int $id The user id in the database.
+     * @return  \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {

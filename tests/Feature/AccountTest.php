@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Sijot\Theme;
 use Sijot\User;
+use Spatie\Permission\Models\Role;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -110,6 +111,7 @@ class AccountTest extends TestCase
             ->post(route('account.settings'), $input)
             ->assertSessionHas('class', 'alert alert-success')
             ->assertSessionHas('message', 'De account informatie is aangepast.')
-            ->assertStatus(302);
+            ->assertStatus(302)
+            ->isRedirect();
     }
 }

@@ -18,7 +18,7 @@
             <h3 class="box-title">Verhuringen</h3>
 
             <div class="box-tools pull-right">
-                <a href="" class="label label-success">Verhuring toevoegen</a>
+                <a href="#" data-toggle="modal" data-target="#newLease" class="label label-success">Verhuring toevoegen</a>
             </div>
         </div>
         <div class="box-body">
@@ -74,4 +74,8 @@
         <!-- /.box-footer-->
     </div>
     <!-- /.box -->
+
+    {{--Lease modal includes --}}
+        @include('lease.partials.create-modal')
+    {{-- /Lease modal includes --}}
 @endsection
