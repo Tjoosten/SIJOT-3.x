@@ -20,12 +20,11 @@
 
                         {{-- Text --}}
                             <div class="row">
-                                <div class="col-sm-9">
-                                    ygusdhksj
+                                <div class="col-md-2" style="margin-left: -10px;">
+                                    <img style="height: 125px; width: 100px; border: 0;" class="pull-right thumbnail img-thumbnail" src="{{ asset($group->image_path) }}" alt="">
                                 </div>
+                                <div class="col-sm-10">
 
-                                <div class="col-md-3">
-                                    <img class="img-rounded img-thumbnail" src="" alt="">
                                 </div>
                             </div>
                         {{-- /Text --}}

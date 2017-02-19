@@ -101,7 +101,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <span class="fa fa-user" aria-hidden="true"></span> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -162,11 +162,15 @@
                         <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
                     </div>
                 </div>
+
                 <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                        <div class="fb-xfbml-parse-ignore">
-                            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
-                        </div>
+                    <h6 class="heading7">CONTACT</h6>
+                    <div class="footer-icons">
+                        <a class="icon icon-facebook" href=""><i class="fa fa-facebook"></i></a>
+                        <a class="icon icon-twitter" href=""><i class="fa fa-twitter"></i></a>
+                        <a class="icon icon-skype" href=""><i class="fa fa-skype"></i></a>
+                        <a class="icon icon-phone" href=""><i class="fa fa-phone"></i></a>
+                        <a class="icon icon-envelop" href=""><i class="fa fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -176,17 +180,13 @@
 
         <div class="copyright">
             <div class="container">
-                <div class="col-md-6">
+                <div style="margin-left: -15px;" class="col-md-6">
                     <p>© {{ date('Y') }} - Scouts en Gidsen Sint-Joris, Turnhout</p>
                 </div>
                 <div class="col-md-6">
                     <ul class="bottom_ul">
-                        <li><a href="#">webenlance.com</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Faq's</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Site Map</a></li>
+                        <li><a href="#"><span class="fa fa-language"></span> Nederlands</a></li>
+                        <li><a href="#"><span class="fa fa-language"></span> Engels</a></li>
                     </ul>
                 </div>
             </div>
