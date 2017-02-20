@@ -193,6 +193,20 @@ class LeaseController extends Controller
     }
 
     /**
+     * Show specific information for a specific lease.
+     *
+     * @param  int $id The lease id.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function leaseShow($id)
+    {
+        $data['lease'] = Lease::find($id);
+        $data['title'] = 'Verhuur info #' . $data['lease']->id;
+
+        return view('lease.back-end-show', $data);
+    }
+
+    /**
      * Soft delete a rental in the database.
      *
      * @see:unit-test \Tests\Feature\LeaseTest::testLeaseDelete

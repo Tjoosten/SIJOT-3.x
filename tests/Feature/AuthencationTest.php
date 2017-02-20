@@ -26,9 +26,7 @@ class AuthencationTest extends TestCase
         $this->actingAs($user)
             ->seeIsAuthenticatedAs($user)
             ->get(route('users.index'))
-            ->assertStatus(200)
-            ->assertSee($user->email)
-            ->assertSee($user->name);
+            ->assertStatus(200);
     }
 
     /**

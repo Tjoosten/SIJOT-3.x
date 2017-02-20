@@ -178,7 +178,7 @@
                         <ul class="treeview-menu" style="display: none;">
                             <li><a href="{{ route('users.index') }}"><i class="fa fa-circle-o"></i> Logins</a></li>
                             <li><a href=""><i class="fa fa-circle-o"></i> Rechten & permissies</a></li>
-                            <li><a href=""><i class="fa fa-circle-o"></i> API sleutels</a></li>
+                            <li><a href="{{ route('api.keys.index') }}"><i class="fa fa-circle-o"></i> API sleutels</a></li>
                         </ul>
                     </li>
                     <li>

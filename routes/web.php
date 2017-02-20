@@ -51,3 +51,6 @@ Route::get('/users/index', 'UsersController@index')->name('users.index');
 Route::get('/users/delete/{id}', 'UsersController@destroy')->name('account.delete');
 Route::get('/users/block/{id}', 'UsersController@userBlock')->name('account.block');
 Route::get('/users/unblock/{id}', 'UsersController@userBlock')->name('account.unblock');
+
+// API management routes
+Route::get('/api/sleutels', 'ApiKeysController@index')->name('api.keys.index');

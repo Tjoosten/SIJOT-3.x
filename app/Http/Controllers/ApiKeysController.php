@@ -3,6 +3,7 @@
 namespace Sijot\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Sijot\Http\Requests\ApuKeyValidator;
 
 class ApiKeysController extends Controller
 {
@@ -19,7 +20,23 @@ class ApiKeysController extends Controller
     public function index()
     {
         $data['title'] = 'API sleutels';
-        return view('', $data);
+        return view('api.backend-keys', $data);
+    }
+
+    /**
+     * @param ApuKeyValidator $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function createKey(ApuKeyValidator $input)
+    {
+        $key['create'] = '';
+        $key['update'] = '';
+
+        if ($key['create'] && $key['update']) {
+
+        }
+
+        return back();
     }
 
     /**
