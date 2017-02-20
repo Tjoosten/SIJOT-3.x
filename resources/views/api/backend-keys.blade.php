@@ -18,10 +18,21 @@
             <h3 class="box-title">API sleutels</h3>
 
             <div class="box-tools pull-right">
-                <a href="#" class="label label-info">Sleutel toevoegen</a>
+                <a href="#" class="label label-info" data-toggle="modal" data-target="#newKey">Sleutel toevoegen</a>
             </div>
         </div>
         <div class="box-body">
+            @if ((int) count($keys) === 0)
+                <div class="alert alert-info">
+                    <strong>Info:</strong> Er zijn geen API sleutels gevonden in het systeem.
+                </div>
+            @else
+
+            @endif
         </div>
     </div>
+
+    {{-- Modal includes --}}
+        @include('api.partials.create-key')
+    {{-- /Modal includes --}}
 @endsection
