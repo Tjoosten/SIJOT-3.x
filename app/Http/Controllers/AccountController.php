@@ -44,8 +44,6 @@ class AccountController extends Controller
     /**
      * Update the password for the authencated user.
      *
-     * @see:unit-test  TODO: Create browser test for validation errors.
-     * @see:unit-test  TODO: Create browser test for no validation errors.
      * @see:unit-test  \Tests\Feature\AccountTest::testUpdatePasswordValidationErr
      * @see:unit-test  \Tests\Feature\AccountTest::testUpdatePasswordNoValidationErr
      *
@@ -68,7 +66,6 @@ class AccountController extends Controller
     /**
      * Update the account settings for the authencated user.
      *
-     * @see:unit-test   \Tests\Browser\AccountTest::testSettingsNoErr
      * @see:unit-test   \Tests\Feature\AccountTest::testUpdateSettingsValidationErr
      * @see:unit-test   \Tests\Feature\AccountTest::testUpdateSettingsNoValidationErr
      *

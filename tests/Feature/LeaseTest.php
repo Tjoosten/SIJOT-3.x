@@ -56,7 +56,7 @@ class LeaseTest extends TestCase
      */
     public function testLeaseCalendar()
     {
-        factory(RentalStatus::class)->create(['name' => 'bevestigd']);
+        factory(RentalStatus::class)->create(['name' => 'Bevestigd']);
         $this->get(route('lease.calendar'))->assertStatus(200);
     }
 
@@ -145,6 +145,21 @@ class LeaseTest extends TestCase
             ->assertSessionHas('message', 'De verhuring is gezet naar een Optie.')
             ->assertStatus(302)
             ->isRedirect();
+    }
+
+    /**
+     * @group all
+     * @group backend
+     */
+    public function testSearchDataFound()
+    {
+        $user  = factory(User::class)->create();
+        $lease = factory(Lease::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->get(route('lease.search'), ['term' => $lease->group_name])
+            ->assertStatus(302);
     }
 
     /**

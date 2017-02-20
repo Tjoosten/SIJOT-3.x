@@ -4,6 +4,9 @@ namespace Sijot\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property mixed status_id
+ */
 class LeaseValidator extends FormRequest
 {
     /**
