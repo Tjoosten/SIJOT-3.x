@@ -34,7 +34,24 @@ Route::get('/verhuur/verwijder/{id}', 'LeaseController@deleteLease')->name('leas
 Route::get('/verhuur/bevestigd/{id}', 'LeaseController@setConfirmed')->name('lease.confirm');
 Route::get('/verhuur/optie/{id}', 'LeaseController@setOption')->name('lease.option');
 Route::get('/verhuur/kalender', 'LeaseController@leaseCalendar')->name('lease.calendar');
+Route::get('/verhuur/zoek', 'LeaseController@search')->name('lease.search');
+
+// Activity routes.
+Route::get('activiteiten', 'ActivityController@backend')->name('activity.backend');
 
 Route::get('/profiel', 'AccountController@index')->name('account.index');
 Route::post('/profiel/informatie', 'AccountController@updateSettings')->name('account.settings');
 Route::post('/profiel/security', 'AccountController@updatePassword')->name('account.security');
+
+// Info routes
+Route::get('/info/inschrijven', 'InfoController@subscribe')->name('info.subscribe');
+
+// Login authorization routes.
+Route::get('/users/index', 'UsersController@index')->name('users.index');
+Route::get('/users/delete/{id}', 'UsersController@destroy')->name('account.delete');
+Route::get('/users/block/{id}', 'UsersController@userBlock')->name('account.block');
+Route::get('/users/unblock/{id}', 'UsersController@userBlock')->name('account.unblock');
+
+// API management routes
+Route::get('/api/sleutels', 'ApiKeysController@index')->name('api.keys.index');
+Route::get('/api/sleutels/verwijder/{id}', 'ApiKeysController@deleteKey')->name('api.keys.delete');

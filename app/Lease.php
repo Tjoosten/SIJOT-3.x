@@ -9,16 +9,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Sijot\Lease
  *
- * @property        int             $id                 Auto Increment in the database.
- * @property        string          $rental_status_id   The status identifier for the lease status.
- * @property        string          $group_name         The group name for the lease.
- * @property        string          $email_address      The email address for the group.
- * @property        string          $phone_number       The phone number for the group.
- * @property        \Carbon\Carbon  $end_date           The end date for the lease.
- * @property        \Carbon\Carbon  $start_date         The start date for the lease.
- * @property        \Carbon\Carbon  $deleted_at         The delete timestamp for the lease.
- * @property        \Carbon\Carbon  $created_at         Timestamp for last modifications on the data.
- * @property        \Carbon\Carbon  $updated_at         Timestamp for the creation data from the data row.
+ * @property        int                 $id                 Auto Increment in the database.
+ * @property        string              $rental_status_id   The status identifier for the lease status.
+ * @property        string              $group_name         The group name for the lease.
+ * @property        string              $email_address      The email address for the group.
+ * @property        string              $phone_number       The phone number for the group.
+ * @property        \Carbon\Carbon      $end_date           The end date for the lease.
+ * @property        \Carbon\Carbon      $start_date         The start date for the lease.
+ * @property        \Carbon\Carbon      $deleted_at         The delete timestamp for the lease.
+ * @property        \Carbon\Carbon      $created_at         Timestamp for last modifications on the data.
+ * @property        \Carbon\Carbon      $updated_at         Timestamp for the creation data from the data row.
  *
  * @property-read   \Sijot\RentalStatus $status         The rental status data relation. (1:1)
  */

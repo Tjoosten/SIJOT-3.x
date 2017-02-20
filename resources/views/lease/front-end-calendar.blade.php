@@ -39,13 +39,13 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($leases as $lease)
-                                        <tr>
-                                            <td>{{ $lease->start_date->format('d/m/Y') }}</td>
-                                            <td><span class="text-center"> - </span></td>
-                                            <td>{{ $lease->end_date->format('d/m/Y') }}</td>
-                                        </tr>
-                                    @endforeach
+                                        @foreach ($leases as $lease)
+                                            <tr>
+                                                <td>{{ $lease->start_date->format('d/m/Y') }}</td>
+                                                <td></td>
+                                                <td>{{ $lease->end_date->format('d/m/Y') }}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
